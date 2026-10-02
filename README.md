@@ -1,11 +1,14 @@
 # 🔍 AuditPulse — Multi-Engine Financial Forensic & Fraud Intelligence System
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://anomalie-detection.streamlit.app/)
 [![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.12%20%7C%203.14-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.32+-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Pytest](https://img.shields.io/badge/Tests-53%2F53%20Passed%20(100%25)-brightgreen?style=for-the-badge&logo=pytest&logoColor=white)](https://docs.pytest.org/)
 [![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Unsupervised%20ML-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+
+> 🚀 **Live Demo en Ligne** : Accédez directement à l'application déployée sur Streamlit Cloud : **[https://anomalie-detection.streamlit.app/](https://anomalie-detection.streamlit.app/)**
 
 **AuditPulse** is an enterprise-grade forensic auditing and financial anomaly detection system engineered to identify high-risk transactions, billing anomalies, and complex fraud typologies in large-scale corporate expense data.
 
@@ -201,7 +204,8 @@ docker compose up -d --build
 ```
 
 * **FastAPI Swagger Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
-* **Streamlit Forensic Studio**: [http://localhost:8501](http://localhost:8501)
+* **Streamlit Forensic Studio (Local)**: [http://localhost:8501](http://localhost:8501)
+* **Streamlit Community Cloud (Live)**: [https://anomalie-detection.streamlit.app/](https://anomalie-detection.streamlit.app/)
 * **Health Check**: `curl -f http://localhost:8000/api/v1/health`
 
 ---

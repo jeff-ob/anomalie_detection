@@ -1,0 +1,54 @@
+services:
+  # ───────────────────────────────────────────────────────────────────────────
+  # API REST FastAPI — Moteur d'inférence, de scoring et de détection
+  # ───────────────────────────────────────────────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: auditpulse-api
+    command: ["python", "main.py", "api", "--host", "0.0.0.0", "--port", "8000"]
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./data:/app/data:ro
+      - ./logs:/app/logs:rw
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 25s
+    restart: unless-stopped
+    networks:
+      - auditpulse-network
+
+  # ───────────────────────────────────────────────────────────────────────────
+  # Dashboard Streamlit — Interface d'audit financier et d'investigation
+  # ───────────────────────────────────────────────────────────────────────────
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: auditpulse-dashboard
+    command: ["python", "main.py", "dashboard", "--port", "8501"]
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://api:8000/api/v1
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./data:/app/data:ro
+      - ./logs:/app/logs:rw
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - auditpulse-network
+
+networks:
+  auditpulse-network:
+    driver: bridge

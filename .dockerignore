@@ -1,0 +1,40 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Testing & CI
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Raw / Sensitive Database files (Confidentialité stricte)
+expenses.sql.sql
+data/local_genuka_table_expenses.sql
+*.bak
+
+# Version Control & IDEs
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# Local logs
+logs/*.log
+*.log
+
+# Secrets & Environment variables
+.env
+.env.*
+
+# Scratch scripts
+scratch/
+*.tmp

@@ -1,4 +1,4 @@
-# 🔍 AuditPulse — Multi-Engine Financial Forensic & Fraud Intelligence System
+# 🔍 AuditPulse - Multi-Engine Financial Forensic & Fraud Intelligence System
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://anomalie-detection.streamlit.app/)
 [![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.12%20%7C%203.14-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
